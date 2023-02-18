@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/iv_jean"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginBottom="5dp"
+        android:scaleType="centerCrop"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:src="@tools:sample/backgrounds/scenic"
+        app:layout_constraintBottom_toTopOf="@id/tv_title"/>
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:id="@+id/cl_notification"
+        android:layout_width="0dp"
+
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="@id/iv_jean"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/tv_title"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:ellipsize="end"
+        android:fontFamily="@font/roboto_medium"
+        android:maxLines="3"
+        android:textColor="@color/black"
+        android:layout_marginBottom="5dp"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toTopOf="@+id/tv_price"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/tv_price"
+        tools:text="Винтажные суперузкие джинсы" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/tv_price"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/roboto"
+        android:textColor="@color/black"
+        android:layout_marginBottom="5dp"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toTopOf="@+id/btn_basket"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/btn_basket"
+        tools:text="1999 Р" />
+    <com.google.android.material.button.MaterialButton
+        style="@style/Widget.MaterialComponents.Button.UnelevatedButton"
+        android:id="@+id/btn_basket"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="5dp"
+        android:layout_marginEnd="60dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginStart="10dp"
+        android:backgroundTint="#E32526"
+        android:fontFamily="@font/roboto"
+        android:insetTop="0dp"
+        android:insetBottom="0dp"
+        android:text="Добавить в корзину"
+        android:textAlignment="center"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        app:cornerRadius="0dp" />
+    <FrameLayout
+        android:id="@+id/fl_favourite"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="#EFEFEF"
+        android:paddingHorizontal="12dp"
+        app:layout_constraintBottom_toBottomOf="@+id/btn_basket"
+        app:layout_constraintStart_toEndOf="@+id/btn_basket"
+        app:layout_constraintTop_toTopOf="@+id/btn_basket">
+
+        <ToggleButton
+            android:id="@+id/cb_favourite"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:textSize="0sp"
+            android:backgroundTint="@android:color/transparent"
+            android:background="@android:color/transparent"
+            android:button="@drawable/favorite"
+            android:minWidth="0dp"
+            tools:checked="true" />
+    </FrameLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
